@@ -12,9 +12,27 @@ int main()
 
 	try
 	{
+		Bureaucrat sin("Sin", 155);
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat sin("Sin", 0);
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+
+	try
+	{
 		tan.incrementGrade();
 	}
-	catch(const std::exception& e)
+	catch(std::exception& e)
 	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
@@ -23,7 +41,7 @@ int main()
 	{
 		cos.decrementGrade();
 	}
-	catch(const std::exception& e)
+	catch(std::exception& e)
 	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}

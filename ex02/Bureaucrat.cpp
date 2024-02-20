@@ -75,16 +75,16 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const& source)
 }
 
 
-void Bureaucrat::signForm(Form & f) const
+void Bureaucrat::signForm(AForm & f) const
 {
 	try
 	{
 		if (this->_grade < f.getGradeSign())
-			throw Form::GradeTooLowException();
+			throw AForm::GradeTooLowException();
 		else
 			f.beSigned(*this);
 	}
-	catch (const Form::GradeTooLowException& e)
+	catch (const AForm::GradeTooLowException& e)
 	{
 		std::cout << RED << "Bureaucrat " << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << RESET << std::endl;
 	}

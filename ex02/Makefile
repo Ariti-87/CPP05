@@ -2,9 +2,13 @@ NAME		:= bureaucrat
 
 #SOURCES_____________________________________________________________
 
-SRCS		:=	main.cpp			\
-				Bureaucrat.cpp		\
-				Form.cpp
+SRCS		:=	main.cpp					\
+				Bureaucrat.cpp				\
+				AForm.cpp					\
+				PresidentialPardonForm.cpp	\
+				RobotomyRequestForm.cpp		\
+				
+
 
 #OBJECT______________________________________________________________
 

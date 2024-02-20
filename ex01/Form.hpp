@@ -1,5 +1,5 @@
-#ifndef DEF_BUREAUCRAT
-#define DEF_BUREAUCRAT
+#ifndef DEF_FORM
+#define DEF_FORM
 
 #define RED "\033[31m"
 #define YELLOW "\033[33m"
@@ -15,25 +15,23 @@
 
 #include <iostream>
 
-class Bureaucrat
+class Bureaucrat;
+
+class Form
 {
 	public:
 
-	Bureaucrat();
-	Bureaucrat(std::string const name, unsigned int grade);
-	Bureaucrat(Bureaucrat const& source);
-	~Bureaucrat();
-	Bureaucrat &operator=(Bureaucrat const& source);
+	Form();
+	Form(std::string const name, unsigned int gradeSign, unsigned int gradeExec);
+	Form(Form const& source);
+	~Form();
+	Form &operator=(Form const&);
 
 	std::string getName(void) const;
-	unsigned int getGrade(void) const;
-	void incrementGrade(void);
-	void decrementGrade(void);
-
-	private:
-
-	const std::string _name;
-	unsigned int _grade;
+	bool getSigned(void) const;
+	unsigned int getGradeExec(void) const;
+	unsigned int getGradeSign(void) const;
+	void beSigned(Bureaucrat const& Bur);
 
 	class GradeTooHighException : public std::exception
 	{
@@ -47,8 +45,15 @@ class Bureaucrat
 
 		virtual const char *what() const throw();
 	};
+
+	private:
+
+	const std::string _name;
+	bool _signed;
+	const unsigned int _gradeSign;
+	const unsigned int _gradeExec;
 };
 
-std::ostream &operator<<(std::ostream &o, Bureaucrat const& source);
+std::ostream &operator<<(std::ostream &o, Form const& source);
 
 #endif

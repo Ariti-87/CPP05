@@ -1,7 +1,7 @@
 #ifndef DEF_BUREAUCRAT
 #define DEF_BUREAUCRAT
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -17,7 +17,7 @@ class Bureaucrat
 	unsigned int getGrade(void) const;
 	void incrementGrade(void);
 	void decrementGrade(void);
-	void signForm(Form & f) const;
+	void signForm(AForm & f) const;
 
 	private:
 
