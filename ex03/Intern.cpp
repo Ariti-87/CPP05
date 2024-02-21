@@ -41,21 +41,18 @@ AForm	*Intern::newPresidentialPardon(std::string target)
 
 AForm	*Intern::makeForm(std::string const& formName, std::string const& target)
 {
-	int 	i = 0;
-	std::string	form[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	AForm*	(Intern::*ptr[3])(std::string) = {&Intern::newShrubberyCreation, &Intern::newRobotomyRequest, &Intern::newPresidentialPardon};
+	std::string	form[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
-	while (i < 3)
+	for (int i = 0; i < 3; i++)
 	{
 		if (form[i] == formName)
 		{
 			std::cout << GREEN << "Intern" << RESET << " creates " << target << std::endl;
 			return ((this->*ptr[i])(target));
 		}
-		i++;
 	}
 
-	std::cout << "no forms for: " << formName << std::endl;
-
+	std::cout << RED << "no forms for: " << formName << RESET << std::endl;
 	return (NULL);
 }
