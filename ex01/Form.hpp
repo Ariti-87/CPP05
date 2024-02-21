@@ -25,7 +25,7 @@ class Form
 	Form(std::string const name, unsigned int gradeSign, unsigned int gradeExec);
 	Form(Form const& source);
 	~Form();
-	Form &operator=(Form const&);
+	Form &operator=(Form const& src);
 
 	std::string getName(void) const;
 	bool getSigned(void) const;

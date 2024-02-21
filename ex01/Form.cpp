@@ -37,7 +37,7 @@ Form & Form::operator=(Form const& src)
 {
 	if (this != &src)
 	{
-		this->_name = src._name;
+		this->_signed = src._signed;
 	}
 	return *this;
 }

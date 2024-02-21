@@ -7,7 +7,8 @@ SRCS		:=	main.cpp					\
 				AForm.cpp					\
 				RobotomyRequestForm.cpp		\
 				ShrubberyCreationForm.cpp	\
-				PresidentialPardonForm.cpp
+				PresidentialPardonForm.cpp	\
+				Intern.cpp
 
 
 

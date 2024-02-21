@@ -9,9 +9,17 @@ Bureaucrat::Bureaucrat(std::string const name, unsigned int grade) : _name(name)
 {
 	std::cout << LGREEN << "Bureaucrat " << this->_name << RESET << " has been created" << std::endl;
 	if (grade > 150)
+	{
+		std::cout << RED;
 		throw Bureaucrat::GradeTooLowException();
+		std::cout << std::endl;
+	}
 	else if (grade < 1)
+	{
+		std::cout << RED;
 		throw Bureaucrat::GradeTooHighException();
+		std::cout << std::endl;
+	}
 	else
 		this->_grade = grade;
 }
