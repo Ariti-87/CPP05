@@ -89,8 +89,7 @@ void Bureaucrat::signForm(Form & f) const
 	{
 		if (this->_grade < f.getGradeSign())
 			throw Form::GradeTooLowException();
-		else
-			f.beSigned(*this);
+		f.beSigned(*this);
 	}
 	catch (const Form::GradeTooLowException& e)
 	{

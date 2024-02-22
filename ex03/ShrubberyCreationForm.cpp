@@ -39,45 +39,42 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::cout << RED << "For execution : " << RESET;
 		throw GradeTooLowException();
 	}
-	if(this->getSigned() && this->checkExecute(executor))
+	std::string filename = _target + "_shrubbery";
+	std::ofstream file(filename.c_str());
+	if (!file)
 	{
-		std::string filename = _target + "_shrubbery";
-		std::ofstream file(filename.c_str());
-		if (!file)
-		{
-			std::cerr << "Error opening file : " << filename << std::endl;
-			return ;
-		}
-		file << "                                                         .\n"
-                 "                                              .         ;\n"
-                 "                 .              .              ;%     ;;\n"
-                 "                   ,           ,                :;%  %;\n"
-                 "                    :         ;                   :;%;'     .,\n"
-                 "           ,.        %;     %;            ;        %;'    ,;\n"
-                 "             ;       ;%;  %%;        ,     %;    ;%;    ,'%\n"
-                 "              %;       %;%;      ,  ;       %;  ;%;   ,%;'\n"
-                 "               ;%;      %;        ;%;        % ;%;  ,%;'\n"
-                 "                `%;.     ;%;     %;'         `;%%;.%;'\n"
-                 "                 `:;%.    ;%%. %@;        %; ;@%;%'\n"
-                 "                    `:%;.  :;bd%;          %;@%;'\n"
-                 "                      `@%:.  :;%.         ;@@%;'\n"
-                 "                        `@%.  `;@%.      ;@@%;\n"
-                 "                          `@%%. `@%%    ;@@%;\n"
-                 "                            ;@%. :@%%  %@@%;\n"
-                 "                              %@bd%%%bd%%:;\n"
-                 "                                #@%%%%%:;;\n"
-                 "                                %@@%%%::;\n"
-                 "                                %@@@%(o);  . '\n"
-                 "                                %@@@o%;:(.,'\n"
-                 "                            `.. %@@@o%::;'\n"
-                 "                               `)@@@o%::;'\n"
-                 "                                %@@(o)::;'\n"
-                 "                               .%@@@@%::;'\n"
-                 "                               ;%@@@@%::;. '\n"
-                 "                              ;%@@@@%%:;;;. '\n"
-                 "                         ...;%@@@@@%%:;;;;,..";
-
-		file.close();
-		std::cout << "File " << YELLOW << filename << RESET << " has been created successfully." << std::endl;
+		std::cerr << "Error opening file : " << filename << std::endl;
+		return ;
 	}
+	file << "                                                         .\n"
+				"                                              .         ;\n"
+				"                 .              .              ;%     ;;\n"
+				"                   ,           ,                :;%  %;\n"
+				"                    :         ;                   :;%;'     .,\n"
+				"           ,.        %;     %;            ;        %;'    ,;\n"
+				"             ;       ;%;  %%;        ,     %;    ;%;    ,'%\n"
+				"              %;       %;%;      ,  ;       %;  ;%;   ,%;'\n"
+				"               ;%;      %;        ;%;        % ;%;  ,%;'\n"
+				"                `%;.     ;%;     %;'         `;%%;.%;'\n"
+				"                 `:;%.    ;%%. %@;        %; ;@%;%'\n"
+				"                    `:%;.  :;bd%;          %;@%;'\n"
+				"                      `@%:.  :;%.         ;@@%;'\n"
+				"                        `@%.  `;@%.      ;@@%;\n"
+				"                          `@%%. `@%%    ;@@%;\n"
+				"                            ;@%. :@%%  %@@%;\n"
+				"                              %@bd%%%bd%%:;\n"
+				"                                #@%%%%%:;;\n"
+				"                                %@@%%%::;\n"
+				"                                %@@@%(o);  . '\n"
+				"                                %@@@o%;:(.,'\n"
+				"                            `.. %@@@o%::;'\n"
+				"                               `)@@@o%::;'\n"
+				"                                %@@(o)::;'\n"
+				"                               .%@@@@%::;'\n"
+				"                               ;%@@@@%::;. '\n"
+				"                              ;%@@@@%%:;;;. '\n"
+				"                         ...;%@@@@@%%:;;;;,..";
+
+	file.close();
+	std::cout << "File " << YELLOW << filename << RESET << " has been created successfully." << std::endl;
 }

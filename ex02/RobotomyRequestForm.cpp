@@ -39,13 +39,10 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		std::cout << RED << "For execution : " << RESET;
 		throw GradeTooLowException();
 	}
-	if(this->getSigned() && this->checkExecute(executor))
-	{
-		srand (time(NULL));
-		std::cout << MAGENTA << "Brrrr... Brrrr... Brrrr... " << RESET;
-		if(rand() % 2 == 1)
-			std::cout << MAGENTA << this->_target << " has been robotomized" << RESET << std::endl;
-		else
-			std::cout << MAGENTA << "Robotomy has failed" << RESET << std::endl;
-	}
+	srand (time(NULL));
+	std::cout << MAGENTA << "Brrrr... Brrrr... Brrrr... " << RESET;
+	if(rand() % 2 == 1)
+		std::cout << MAGENTA << this->_target << " has been robotomized" << RESET << std::endl;
+	else
+		std::cout << MAGENTA << "Robotomy has failed" << RESET << std::endl;
 }
