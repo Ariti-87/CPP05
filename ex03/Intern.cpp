@@ -52,7 +52,6 @@ AForm	*Intern::makeForm(std::string const& formName, std::string const& target)
 			return ((this->*ptr[i])(target));
 		}
 	}
-
-	std::cout << RED << "no forms for: " << formName << RESET << std::endl;
+	std::cout << RED << "this form doesn't exist : " << formName << RESET << std::endl;
 	return (NULL);
 }

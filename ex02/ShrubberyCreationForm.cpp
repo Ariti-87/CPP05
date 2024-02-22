@@ -7,7 +7,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", 145
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : AForm("Shrubbery Creation", 145, 137), _target(target)
 {
-	std::cout << YELLOW << target << "'s pardon" << RESET << " has been created" << std::endl;
+	std::cout << YELLOW << target << "'s shrubbery" << RESET << " has been created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src) : AForm(src.getName(), 145, 137)

@@ -7,7 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", 72, 45)
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const target) : AForm("Robotomy Request", 72, 45), _target(target)
 {
-	std::cout << MAGENTA << target << "'s pardon" << RESET << " has been created" << std::endl;
+	std::cout << MAGENTA << target << "'s robotomy" << RESET << " has been created" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& src) : AForm(src.getName(), 72, 45)
