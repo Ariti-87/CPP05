@@ -6,7 +6,7 @@ AForm::AForm() : _name("AForm"), _signed(false), _gradeSign(150), _gradeExec(150
 	std::cout << BLUE << "Default AForm" << RESET << " has been created" << std::endl;
 }
 
-AForm::AForm(std::string const name, unsigned int gradeSign, unsigned int gradeExec) : _name(name), _gradeSign(gradeSign), _gradeExec(gradeExec)
+AForm::AForm(std::string const name, unsigned int gradeSign, unsigned int gradeExec) : _name(name), _signed(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
 	std::cout << BLUE << "AForm " << this->_name << RESET << " has been created" << std::endl;
 	if (gradeSign > 150 || gradeExec > 150)
